@@ -99,3 +99,8 @@ The provider configuration block accepts the following arguments:
   be set via the `TWILIO_AUTH_TOKEN` environment variable.
 - `workspace_sid` - (Required) The sid of your Task Router Workspace. May alternatively
   be set via the `TWILIO_WORKSPACE_SID` environment variable.
+
+### With Thanks
+
+- Thanks To Kevin Burke for his help over on the [Twilio Go library](https://github.com/kevinburke/twilio-go)
+- Inspired by https://github.com/tulip/terraform-provider-twilio
