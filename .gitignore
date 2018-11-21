@@ -1,1 +1,4 @@
 terraform-provider-twiliotaskrouter
+build/*
+release/*
+.DS_STORE
