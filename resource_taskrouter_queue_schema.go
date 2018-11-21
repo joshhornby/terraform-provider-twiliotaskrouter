@@ -10,7 +10,7 @@ import (
 func resourceTaskRouterQueue() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			"name": &schema.Schema{
+			"friendly_name": &schema.Schema{
 				Type:     schema.TypeString,
 				Required: true,
 			},

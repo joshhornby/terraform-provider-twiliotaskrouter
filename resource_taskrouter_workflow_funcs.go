@@ -12,7 +12,7 @@ func taskRouterWorkflowCreate(d *schema.ResourceData, meta interface{}) error {
 	m := meta.(*twilioMeta)
 
 	data := url.Values{}
-	data.Set("FriendlyName", d.Get("name").(string))
+	data.Set("FriendlyName", d.Get("friendly_name").(string))
 	data.Set("Configuration", d.Get("configuration").(string))
 	data.Set("AssignmentCallbackUrl", d.Get("assignment_callback_url").(string))
 	data.Set("FallbackAssignmentCallbackUrl", d.Get("fallback_assignment_callback_url").(string))
@@ -34,8 +34,8 @@ func taskRouterWorkflowUpdate(d *schema.ResourceData, meta interface{}) error {
 
 	data := url.Values{}
 
-	if d.HasChange("name") {
-		data.Set("FriendlyName", d.Get("name").(string))
+	if d.HasChange("friendly_name") {
+		data.Set("FriendlyName", d.Get("friendly_name").(string))
 	}
 
 	if d.HasChange("configuration") {

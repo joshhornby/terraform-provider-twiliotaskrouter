@@ -12,7 +12,7 @@ func activityCreate(d *schema.ResourceData, meta interface{}) error {
 	m := meta.(*twilioMeta)
 
 	data := url.Values{}
-	data.Set("FriendlyName", d.Get("name").(string))
+	data.Set("FriendlyName", d.Get("friendly_name").(string))
 	data.Set("Available", d.Get("available").(string))
 
 	activity, err := m.Client.TaskRouter.Workspace(m.WorkspaceSid).Activities.Create(context.Background(), data)
@@ -31,8 +31,8 @@ func activityUpdate(d *schema.ResourceData, meta interface{}) error {
 
 	data := url.Values{}
 
-	if d.HasChange("name") {
-		data.Set("FriendlyName", d.Get("name").(string))
+	if d.HasChange("friendly_name") {
+		data.Set("FriendlyName", d.Get("friendly_name").(string))
 	}
 
 	_, err := m.Client.TaskRouter.Workspace(m.WorkspaceSid).Activities.Update(context.Background(), d.Id(), data)

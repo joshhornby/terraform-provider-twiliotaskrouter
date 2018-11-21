@@ -12,7 +12,7 @@ func taskRouterQueueCreate(d *schema.ResourceData, meta interface{}) error {
 	m := meta.(*twilioMeta)
 
 	data := url.Values{}
-	data.Set("FriendlyName", d.Get("name").(string))
+	data.Set("FriendlyName", d.Get("friendly_name").(string))
 	data.Set("ReservationActivitySid", d.Get("reservation_activity_sid").(string))
 	data.Set("AssignmentActivitySid", d.Get("assignment_activity_sid").(string))
 	data.Set("TargetWorkers", d.Get("target_workers").(string))
@@ -33,8 +33,8 @@ func taskRouterQueueUpdate(d *schema.ResourceData, meta interface{}) error {
 
 	data := url.Values{}
 
-	if d.HasChange("name") {
-		data.Set("FriendlyName", d.Get("name").(string))
+	if d.HasChange("friendly_name") {
+		data.Set("FriendlyName", d.Get("friendly_name").(string))
 	}
 
 	if d.HasChange("reservation_activity_sid") {
