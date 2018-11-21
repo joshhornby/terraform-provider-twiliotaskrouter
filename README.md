@@ -77,7 +77,7 @@ resource "twiliotaskrouter_workflow" "english_agents_workflow" {
 }
 EOF
 
-  depends_on = ["twiliotaskrouter_queue.english_queue", "twiliotaskrouter_queue.sales_queue"]
+  depends_on = ["twiliotaskrouter_queue.english_languages_queue", "twiliotaskrouter_queue.sales_queue"]
 }
 
 resource "twiliotaskrouter_worker" "my_worker" {
