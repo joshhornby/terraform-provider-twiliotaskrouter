@@ -1,14 +1,42 @@
-# Terraform Provider
+# Terraform Twilio Task Router Provider
 
 ## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.11.x
 
-## Usage
+## Getting Started
 
-- Download the latest release from [the releases page](https://github.com/joshhornby/terraform-provider-twiliotaskrouter/releases)
-- `tar -xvzf terraform-provider-twiliotaskrouter_VERSION.tgz`
-- `mkdir -p ~/.terraform.d/plugins/darwin_amd64 && cp terraform-provider-twiliotaskrouter ~/.terraform.d/plugins/darwin_amd64`
+Download the latest release from [the releases page](https://github.com/joshhornby/terraform-provider-twiliotaskrouter/releases)
+
+Unzip the download
+
+`tar -xvzf terraform-provider-twiliotaskrouter_VERSION.tgz`
+
+We need to tell Terraform to use our customer provider, the command below will create the directory if you don't already
+have it and then copy the provider into this folder.
+
+`mkdir -p ~/.terraform.d/plugins/darwin_amd64 && cp terraform-provider-twiliotaskrouter ~/.terraform.d/plugins/darwin_amd64`
+
+Next, create a new Terraform file `main.tf` and at the top include
+
+```
+provider "twiliotaskrouter" {
+  account_sid = "ACXXX"
+  auth_token = "XXX"
+  workspace_sid = "WSXXX"
+}
+```
+
+This tells Terraform to use our custom provider.
+
+The provider configuration block accepts the following arguments:
+
+- `account_sid` - (Required) Your SID (application ID) for the the Twilio API. May alternatively be set via the
+  `TWILIO_SID` environment variable.
+- `auth_token` - (Required) The API auth token to use when making requests. May alternatively
+  be set via the `TWILIO_AUTH_TOKEN` environment variable.
+- `workspace_sid` - (Required) The sid of your Task Router Workspace. May alternatively
+  be set via the `TWILIO_WORKSPACE_SID` environment variable.
 
 ## Example
 
@@ -90,15 +118,6 @@ EOF
 }
 
 ```
-
-The provider configuration block accepts the following arguments:
-
-- `account_sid` - (Required) Your SID (application ID) for the the Twilio API. May alternatively be set via the
-  `TWILIO_SID` environment variable.
-- `auth_token` - (Required) The API auth token to use when making requests. May alternatively
-  be set via the `TWILIO_AUTH_TOKEN` environment variable.
-- `workspace_sid` - (Required) The sid of your Task Router Workspace. May alternatively
-  be set via the `TWILIO_WORKSPACE_SID` environment variable.
 
 ### With Thanks
 
