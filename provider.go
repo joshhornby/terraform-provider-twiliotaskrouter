@@ -33,6 +33,7 @@ func provider() terraform.ResourceProvider {
 			"twiliotaskrouter_activity": resourceTaskRouterActivity(),
 			"twiliotaskrouter_queue":    resourceTaskRouterQueue(),
 			"twiliotaskrouter_workflow": resourceTaskRouterWorkflow(),
+			"twiliotaskrouter_worker":   resourceTaskRouterWorker(),
 		},
 		ConfigureFunc: providerConfigure,
 	}
