@@ -13,9 +13,10 @@ func resourceTaskRouterWorker() *schema.Resource {
 				Required: true,
 			},
 			"attributes": &schema.Schema{
-				Type:         schema.TypeString,
-				Required:     true,
-				ValidateFunc: validation.ValidateJsonString,
+				Type:             schema.TypeString,
+				Required:         true,
+				ValidateFunc:     validation.ValidateJsonString,
+				DiffSuppressFunc: suppressEquivalentJsonDiffs,
 			},
 		},
 		Create: workerCreate,
