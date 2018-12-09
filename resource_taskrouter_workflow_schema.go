@@ -13,9 +13,10 @@ func resourceTaskRouterWorkflow() *schema.Resource {
 				Required: true,
 			},
 			"configuration": &schema.Schema{
-				Type:         schema.TypeString,
-				Required:     true,
-				ValidateFunc: validation.ValidateJsonString,
+				Type:             schema.TypeString,
+				Required:         true,
+				ValidateFunc:     validation.ValidateJsonString,
+				DiffSuppressFunc: suppressEquivalentJsonDiffs,
 			},
 			"assignment_callback_url": &schema.Schema{
 				Type:     schema.TypeString,
