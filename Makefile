@@ -1,7 +1,7 @@
 NAME:=$(shell basename $$PWD)
 ARCH:=$(shell uname -m)
 REPO:=$(shell git config --get remote.origin.url | perl -ne 'm{github.com[:/](.+/[^.]+)}; print  $$1')
-VERSION=0.2.0
+VERSION=0.3.0
 
 test:
 	go test ./...
