@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- [Terraform](https://www.terraform.io/downloads.html) 0.11.x
+- [Terraform](https://www.terraform.io/downloads.html) 0.12.x
 
 ## Getting Started
 
