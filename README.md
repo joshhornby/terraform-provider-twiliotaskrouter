@@ -1,5 +1,10 @@
 # Terraform Twilio Task Router Provider
 
+## Note
+
+This is forked from the original repo to ensure no untested code breaks our system, Please do not make any changes to
+this repo. All changes made to the code since forking have been reset.
+
 ## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.12.x
